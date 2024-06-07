@@ -1,1 +1,1 @@
-console.log('Hello, world!!!');
+import { Speedstyle } from './app/app';
