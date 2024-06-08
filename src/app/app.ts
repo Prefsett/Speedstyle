@@ -1,3 +1,5 @@
+import { Font } from './font/font';
+
 interface ISpeedstyle {}
 
 export class Speedstyle implements ISpeedstyle {
@@ -7,5 +9,7 @@ export class Speedstyle implements ISpeedstyle {
     if (Speedstyle.instance) return Speedstyle.instance;
 
     Speedstyle.instance = this;
+
+    Font.applyStyles();
   }
 }
