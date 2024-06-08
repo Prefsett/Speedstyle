@@ -11,7 +11,8 @@
 
     "paths": {
       "@interface/*": ["./src/app/lib/interface/*"],
-      "@type/*": ["./src/app/lib/type/*"]
+      "@type/*": ["./src/app/lib/type/*"],
+      "@enum/*": ["./src/app/lib/enum/*"]
     }
   }
 }

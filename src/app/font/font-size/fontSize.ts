@@ -1,9 +1,5 @@
 import { RegExpArr } from '@type/regExpArr';
-
-enum UnitsMeasurement {
-  px = 'px',
-  rem = 'rem',
-}
+import { UnitsMeasurement } from '@enum/uintsMeasurement';
 
 export class FontSize {
   private static elements: HTMLElement[] = FontSize.getElements();
