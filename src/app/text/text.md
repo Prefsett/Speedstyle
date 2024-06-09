@@ -1,23 +1,17 @@
-font-size: small => text:sml;<br>
-font-size: smaller => text:smr;<br>
-font-size: x-small => text:x-sml;<br>
-font-size: xx-small => text:xx-sml;<br>
-<br>
-font-size: medium => text:med;<br>
-<br>
-font-size: large => text:lrg;<br>
-font-size: larger => text:lrgr;<br>
-font-size: x-large => text:x-lrg;<br>
-font-size: xx-large => text:xx-lrg;<br>
-<br>
-font-size: 1rem => text:root;<br>
-<br>
-font-size: inherit => text:inh;<br>
-font-size: initial => text:ini;<br>
-font-size: unset => text:uns;<br>
-<br>
-font-size: var(--var) => text:--var;<br>
-<br>
+font-size: small => text:sml<br>
+font-size: smaller => text:smr<br>
+font-size: x-small => text:x-sml<br>
+font-size: xx-small => text:xx-sml<br>
+font-size: medium => text:med<br>
+font-size: large => text:lrg<br>
+font-size: larger => text:lrgr<br>
+font-size: x-large => text:x-lrg<br>
+font-size: xx-large => text:xx-lrg<br>
+font-size: 1rem => text:root<br>
+font-size: inherit => text:inh<br>
+font-size: initial => text:ini<br>
+font-size: unset => text:uns<br>
+font-size: var(--var) => text:--var<br>
 font-size: [number]% => text:[number]%<br>
 font-size: [number]cap => text:[number]cap<br>
 font-size: [number]ch => text:[number]ch<br>

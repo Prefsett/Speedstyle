@@ -65,6 +65,7 @@ export class Text {
           break;
         case 'uns':
           resultValue = 'unset';
+          break;
 
         default:
           if (!/--.*/.test(value)) {

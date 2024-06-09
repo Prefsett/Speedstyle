@@ -16,4 +16,4 @@ node_modules/
 .vscode/
 
 # Todo
-todo.md
+*.todo.md
