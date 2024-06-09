@@ -20,7 +20,6 @@ module.exports = {
       '@app': path.join(__dirname, 'src/app'),
 
       /* Lib alias */
-      '@interface': path.join(__dirname, 'src/app/lib/interface'),
       '@type': path.join(__dirname, 'src/app/lib/type'),
       '@enum': path.join(__dirname, 'src/app/lib/enum'),
     },
