@@ -1,23 +1,16 @@
 # Compiled output
-dist/
-tmp/
-out-tsc/
-bazel-out/
+__build__/
 
 # Tests
-__tests__/
 coverage/
 
 # Node
 node_modules/
-npm-debug.log
-yarn-error.log
 
 # TypeScript
 *.tsbuildinfo
 .tsbuildinfo
 
 # Misc
-.DS_Store
 .idea/
 .vscode/

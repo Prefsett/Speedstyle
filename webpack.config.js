@@ -28,7 +28,7 @@ module.exports = {
 
   entry: './src/index.ts',
   output: {
-    filename: 'bundle.js',
-    path: __dirname + '/dist',
+    filename: 'index.js',
+    path: __dirname + '/__build__',
   },
 };

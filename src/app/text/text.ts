@@ -1,12 +1,12 @@
 import { RegExpArr } from '@type/regExpArr';
 import { UnitsMeasurement } from '@enum/uintsMeasurement';
 
-export class FontSize {
-  private static elements: HTMLElement[] = FontSize.getElements();
+export class Text {
+  private static elements: HTMLElement[] = Text.getElements();
 
   public static applyStyle(): void {
-    FontSize.addStyles();
-    FontSize.removeClasses();
+    Text.addStyles();
+    Text.removeClasses();
   }
 
   private static getElements(): HTMLElement[] {
@@ -16,20 +16,20 @@ export class FontSize {
   }
 
   private static addStyles(): void {
-    for (let element of FontSize.elements) {
-      const value: string = FontSize.getClassName(element).replace(/text:/, '');
+    for (let element of Text.elements) {
+      const value: string = Text.getClassName(element).replace(/text:/, '');
       const match: RegExpArr = value.match(/(\d+)(\w+)/);
       const unit: string = match ? match[1] : '';
       const unitMeasurement: string = match ? match[2] : '';
 
-      if (FontSize.checkUnitMeasurement(unitMeasurement))
+      if (Text.checkUnitMeasurement(unitMeasurement))
         element.style.fontSize = unit + unitMeasurement;
     }
   }
 
   private static removeClasses(): void {
-    for (let element of FontSize.elements)
-      element.classList.remove(FontSize.getClassName(element));
+    for (let element of Text.elements)
+      element.classList.remove(Text.getClassName(element));
   }
 
   private static getClassName(element: HTMLElement): string {
