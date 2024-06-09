@@ -2,16 +2,20 @@
   "name": "speedstyle",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "npx webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest",
+    "debug": "npm run build && npm run test"
   },
   "author": "Prefsett",
   "license": "ISC",
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
+    "ts-jest": "^29.1.4",
     "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"

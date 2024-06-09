@@ -4,6 +4,10 @@ tmp/
 out-tsc/
 bazel-out/
 
+# Tests
+__tests__/
+coverage/
+
 # Node
 node_modules/
 npm-debug.log
