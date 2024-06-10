@@ -11,6 +11,9 @@
     "forceConsistentCasingInFileNames": true,
 
     "paths": {
+      "@app/*": ["./src/app/*"],
+      "@utils/*": ["./src/app/utils/*"],
+      "@lib/*": ["./src/app/lib/*"],
       "@type/*": ["./src/app/lib/type/*"],
       "@enum/*": ["./src/app/lib/enum/*"]
     }

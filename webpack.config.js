@@ -18,6 +18,8 @@ module.exports = {
     alias: {
       '@src': path.join(__dirname, 'src'),
       '@app': path.join(__dirname, 'src/app'),
+      '@utils': path.join(__dirname, 'src/app/utils'),
+      '@lib': path.join(__dirname, 'src/app/lib'),
 
       /* Lib alias */
       '@type': path.join(__dirname, 'src/app/lib/type'),

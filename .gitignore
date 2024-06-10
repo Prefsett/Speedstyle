@@ -3,6 +3,7 @@ __build__/
 
 # Tests
 coverage/
+tmp/
 
 # Node
 node_modules/
@@ -14,6 +15,3 @@ node_modules/
 # Misc
 .idea/
 .vscode/
-
-# Todo
-*.todo.md

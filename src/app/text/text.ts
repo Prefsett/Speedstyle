@@ -1,5 +1,6 @@
 import { RegExpArr } from '@type/regExpArr';
 import { UnitsMeasurement } from '@enum/uintsMeasurement';
+import { Values } from '@utils/values';
 
 export class Text {
   private static elements: HTMLElement[] = Text.getElements();
@@ -18,68 +19,7 @@ export class Text {
   private static addStyles(): void {
     for (let element of Text.elements) {
       const value: string = Text.getClassName(element).replace(/text:/, '');
-
-      const STANDARD_FONT_SIZE: string = '16px';
-      let resultValue: string = STANDARD_FONT_SIZE;
-
-      switch (value) {
-        case 'root':
-          resultValue = '1rem';
-          break;
-
-        case 'sml':
-          resultValue = 'small';
-          break;
-        case 'smr':
-          resultValue = 'smaller';
-          break;
-        case 'x-sml':
-          resultValue = 'x-small';
-          break;
-        case 'xx-sml':
-          resultValue = 'xx-small';
-          break;
-
-        case 'med':
-          resultValue = 'medium';
-          break;
-
-        case 'lrg':
-          resultValue = 'large';
-          break;
-        case 'lrgr':
-          resultValue = 'larger';
-          break;
-        case 'x-lrg':
-          resultValue = 'x-large';
-          break;
-        case 'xx-lrg':
-          resultValue = 'xx-large';
-          break;
-
-        case 'inh':
-          resultValue = 'inherit';
-          break;
-        case 'ini':
-          resultValue = 'initial';
-          break;
-        case 'uns':
-          resultValue = 'unset';
-          break;
-
-        default:
-          if (!/--.*/.test(value)) {
-            const match: RegExpArr = value.match(/(\d+)(\w+)/);
-            const unit: string = match ? match[1] : '';
-            const unitMeasurement: string = match ? match[2] : '';
-            if (Text.checkUnitMeasurement(unitMeasurement))
-              resultValue = unit + unitMeasurement;
-          } else resultValue = `var(${value})`;
-
-          break;
-      }
-
-      element.style.fontSize = resultValue;
+      element.style.fontSize = Text.getValue(value);
     }
   }
 
@@ -91,6 +31,62 @@ export class Text {
   private static getClassName(element: HTMLElement): string {
     const classList: RegExpArr = element.className.match(/text:[\d\w-]+/);
     return classList ? classList[0] : '';
+  }
+
+  private static getValue(value: string): string {
+    const STANDARD_FONT_SIZE: string = '16px';
+    return (
+      Text.getUnitValue(value) ||
+      Text.getFontSizeValue(value) ||
+      Text.getCustomValue(value) ||
+      Values.getInheritanceValue(value) ||
+      Values.getVarValue(value) ||
+      STANDARD_FONT_SIZE
+    );
+  }
+
+  private static getCustomValue(value: string): string | null {
+    switch (value) {
+      case 'root':
+        return '1rem';
+      default:
+        return null;
+    }
+  }
+
+  private static getFontSizeValue(value: string): string | null {
+    switch (value) {
+      case 'sml':
+        return 'small';
+      case 'smr':
+        return 'smaller';
+      case 'x-sml':
+        return 'x-small';
+      case 'xx-sml':
+        return 'xx-small';
+      case 'med':
+        return 'medium';
+      case 'lrg':
+        return 'large';
+      case 'lrgr':
+        return 'larger';
+      case 'x-lrg':
+        return 'x-large';
+      case 'xx-lrg':
+        return 'xx-large';
+      default:
+        return null;
+    }
+  }
+
+  private static getUnitValue(value: string): string | null {
+    const match: RegExpArr = value.match(/(\d+)(\w+)/);
+    const unit: string = match ? match[1] : '';
+    const unitMeasurement: string = match ? match[2] : '';
+
+    if (Text.checkUnitMeasurement(unitMeasurement))
+      return unit + unitMeasurement;
+    else return null;
   }
 
   private static checkUnitMeasurement(unitMeasurement: string): boolean {
