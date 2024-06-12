@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "npx webpack",
-    "test": "jest",
-    "debug": "npm run build && npm run test"
+    "build": "jest && npx webpack",
+    "test": "jest"
   },
   "author": "Prefsett",
   "license": "ISC",

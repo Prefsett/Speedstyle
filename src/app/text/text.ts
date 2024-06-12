@@ -1,13 +1,13 @@
 import { RegExpArr } from '@type/regExpArr';
-import { UnitsMeasurement } from '@enum/uintsMeasurement';
-import { Values } from '@utils/values';
+import { Values } from '@utils/values/values';
+import { TextValues } from './textValues';
 
 export class Text {
-  private static elements: HTMLElement[] = Text.getElements();
+  private static elements: HTMLElement[] = this.getElements();
 
   public static applyStyle(): void {
-    Text.addStyles();
-    Text.removeClasses();
+    this.addStyles();
+    this.removeClasses();
   }
 
   private static getElements(): HTMLElement[] {
@@ -17,15 +17,15 @@ export class Text {
   }
 
   private static addStyles(): void {
-    for (let element of Text.elements) {
-      const value: string = Text.getClassName(element).replace(/text:/, '');
+    for (let element of this.elements) {
+      const value: string = this.getClassName(element).replace(/text:/, '');
       element.style.fontSize = Text.getValue(value);
     }
   }
 
   private static removeClasses(): void {
-    for (let element of Text.elements)
-      element.classList.remove(Text.getClassName(element));
+    for (let element of this.elements)
+      element.classList.remove(this.getClassName(element));
   }
 
   private static getClassName(element: HTMLElement): string {
@@ -36,63 +36,9 @@ export class Text {
   private static getValue(value: string): string {
     const STANDARD_FONT_SIZE: string = '16px';
     return (
-      Text.getUnitValue(value) ||
-      Text.getFontSizeValue(value) ||
-      Text.getCustomValue(value) ||
-      Values.getInheritanceValue(value) ||
-      Values.getVarValue(value) ||
+      Values.getValues(value) ||
+      TextValues.getTextValues(value) ||
       STANDARD_FONT_SIZE
     );
-  }
-
-  private static getCustomValue(value: string): string | null {
-    switch (value) {
-      case 'root':
-        return '1rem';
-      default:
-        return null;
-    }
-  }
-
-  private static getFontSizeValue(value: string): string | null {
-    switch (value) {
-      case 'sml':
-        return 'small';
-      case 'smr':
-        return 'smaller';
-      case 'x-sml':
-        return 'x-small';
-      case 'xx-sml':
-        return 'xx-small';
-      case 'med':
-        return 'medium';
-      case 'lrg':
-        return 'large';
-      case 'lrgr':
-        return 'larger';
-      case 'x-lrg':
-        return 'x-large';
-      case 'xx-lrg':
-        return 'xx-large';
-      default:
-        return null;
-    }
-  }
-
-  private static getUnitValue(value: string): string | null {
-    const match: RegExpArr = value.match(/(\d+)(\w+)/);
-    const unit: string = match ? match[1] : '';
-    const unitMeasurement: string = match ? match[2] : '';
-
-    if (Text.checkUnitMeasurement(unitMeasurement))
-      return unit + unitMeasurement;
-    else return null;
-  }
-
-  private static checkUnitMeasurement(unitMeasurement: string): boolean {
-    let checked: boolean = false;
-    for (let UnitMeasurement in UnitsMeasurement)
-      checked = checked || unitMeasurement == UnitMeasurement;
-    return checked;
   }
 }
