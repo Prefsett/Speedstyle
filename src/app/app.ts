@@ -1,8 +1,5 @@
 import { Text } from './text/text';
-
-interface ISpeedstyle {}
-
-export class Speedstyle implements ISpeedstyle {
+export class Speedstyle {
   private static instance: Speedstyle;
 
   constructor() {

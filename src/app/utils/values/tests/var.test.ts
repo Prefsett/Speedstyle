@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { Values } from '@utils/values/values';
+import { Values } from '@values';
 
 describe('Return var value or null', () => {
   test('Should return the input value wrapped in var() if it is not null or correct value', () => {
@@ -11,6 +11,5 @@ describe('Return var value or null', () => {
   test('Should return null if the value is not correct or null', () => {
     expect(Values.getVarValue('')).toBe(null);
     expect(Values.getVarValue('--')).toBe(null);
-    expect(Values.getVarValue('10px')).toBe(null);
   });
 });

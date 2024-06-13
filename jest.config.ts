@@ -96,6 +96,10 @@ const config: Config = {
     '^@lib/(.*)$': '<rootDir>/src/app/lib/$1',
     '^@type/(.*)$': '<rootDir>/src/app/lib/type/$1',
     '^@enum/(.*)$': '<rootDir>/src/app/lib/enum/$1',
+
+    '^@textValues': '<rootDir>/src/app/text/textValues.ts',
+    '^@values': '<rootDir>/src/app/utils/values/values.ts',
+    '^@enumValues': '<rootDir>/src/app/utils/enumValues/enumValues.ts',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

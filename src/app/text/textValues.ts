@@ -1,39 +1,17 @@
+import { EnumValues } from '@utils/enumValues/enumValues';
+import { customTextValue } from '@enum/customTextValue';
+import { textValue } from '@enum/textValue';
+
 export class TextValues {
-  public static getTextValues(value: string): string | null {
-    return this.getCustomValue(value) || this.getFontSizeValue(value);
+  public static getValues(value: string): string | null {
+    return this.getCustomValue(value) || this.getTextValue(value);
   }
 
   public static getCustomValue(value: string): string | null {
-    switch (value) {
-      case 'root':
-        return '1rem';
-      default:
-        return null;
-    }
+    return EnumValues.getValues(value, customTextValue);
   }
 
-  public static getFontSizeValue(value: string): string | null {
-    switch (value) {
-      case 'sml':
-        return 'small';
-      case 'smr':
-        return 'smaller';
-      case 'x-sml':
-        return 'x-small';
-      case 'xx-sml':
-        return 'xx-small';
-      case 'med':
-        return 'medium';
-      case 'lrg':
-        return 'large';
-      case 'lrgr':
-        return 'larger';
-      case 'x-lrg':
-        return 'x-large';
-      case 'xx-lrg':
-        return 'xx-large';
-      default:
-        return null;
-    }
+  public static getTextValue(value: string): string | null {
+    return EnumValues.getValues(value, textValue);
   }
 }

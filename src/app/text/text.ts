@@ -11,9 +11,9 @@ export class Text {
   }
 
   private static getElements(): HTMLElement[] {
-    const elements: NodeListOf<Element> =
-      document.querySelectorAll('[class*="text:"]');
-    return Array.from(elements) as HTMLElement[];
+    return Array.from(
+      document.querySelectorAll('[class*="text:"]'),
+    ) as HTMLElement[];
   }
 
   private static addStyles(): void {
@@ -29,7 +29,7 @@ export class Text {
   }
 
   private static getClassName(element: HTMLElement): string {
-    const classList: RegExpArr = element.className.match(/text:[\d\w-]+/);
+    const classList: RegExpArr = element.className.match(/text:[\d\w-]*/);
     return classList ? classList[0] : '';
   }
 
@@ -37,7 +37,7 @@ export class Text {
     const STANDARD_FONT_SIZE: string = '16px';
     return (
       Values.getValues(value) ||
-      TextValues.getTextValues(value) ||
+      TextValues.getValues(value) ||
       STANDARD_FONT_SIZE
     );
   }
