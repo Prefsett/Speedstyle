@@ -3,8 +3,11 @@ export class EnumValues {
     value: string,
     valuesEnum: T,
   ): string | null {
-    for (let valueEnum in valuesEnum)
+    for (let valueEnum in valuesEnum) {
+      console.log(value);
+      console.log(valueEnum);
       if (value == valueEnum) return valuesEnum[valueEnum] as string;
+    }
 
     return null;
   }

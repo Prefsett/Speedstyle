@@ -1,3 +1,5 @@
+import { EnumValues } from '@utils/enumValues/enumValues';
+import { inheritanceValue } from '@enum/inheritanceValue';
 import { UnitsMeasurement } from '@enum/uintsMeasurement';
 
 export class Values {
@@ -19,20 +21,11 @@ export class Values {
   }
 
   public static getInheritanceValue(value: string): string | null {
-    switch (value) {
-      case 'inh':
-        return 'inherit';
-      case 'ini':
-        return 'initial';
-      case 'uns':
-        return 'unset';
-      default:
-        return null;
-    }
+    return EnumValues.getValues(value, inheritanceValue);
   }
 
   private static checkUnitValue(unit: string): boolean {
-    for (let unitMeasurement of Object.values(UnitsMeasurement))
+    for (let unitMeasurement in UnitsMeasurement)
       if (unit == unitMeasurement) return true;
     return false;
   }

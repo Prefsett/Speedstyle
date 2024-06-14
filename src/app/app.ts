@@ -1,4 +1,4 @@
-import { Text } from './text/text';
+import { Typography } from './typography/typography';
 export class Speedstyle {
   private static instance: Speedstyle;
 
@@ -7,6 +7,6 @@ export class Speedstyle {
 
     Speedstyle.instance = this;
 
-    Text.applyStyle();
+    Typography.applyStyles();
   }
 }

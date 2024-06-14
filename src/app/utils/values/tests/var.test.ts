@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { Values } from '@values';
+import { Values } from '@utils/values/values';
 
 describe('Return var value or null', () => {
   test('Should return the input value wrapped in var() if it is not null or correct value', () => {

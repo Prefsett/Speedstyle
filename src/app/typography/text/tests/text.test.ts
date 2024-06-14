@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { TextValues } from '@textValues';
+import { TextValues } from '../textValues';
 
 describe('Return text value or null', () => {
   test('Should return an integer value if the given shortened value passed is true or not null', () => {

@@ -16,10 +16,7 @@
       "@lib/*": ["./src/app/lib/*"],
       "@type/*": ["./src/app/lib/type/*"],
       "@enum/*": ["./src/app/lib/enum/*"],
-
-      "@textValues": ["./src/app/text/textValues.ts"],
-      "@values": ["./src/app/utils/values/values.ts"],
-      "@enumValues": ["./src/app/utils/enumValues/enumValues.ts"]
+      "@typography/*": ["./src/app/typography/*"]
     }
   }
 }

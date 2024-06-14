@@ -19,7 +19,7 @@ export class Text {
   private static addStyles(): void {
     for (let element of this.elements) {
       const value: string = this.getClassName(element).replace(/text:/, '');
-      element.style.fontSize = Text.getValue(value);
+      element.style.fontSize = this.getValue(value);
     }
   }
 
@@ -29,8 +29,8 @@ export class Text {
   }
 
   private static getClassName(element: HTMLElement): string {
-    const classList: RegExpArr = element.className.match(/text:[\d\w-]*/);
-    return classList ? classList[0] : '';
+    const className: RegExpArr = element.className.match(/text:[\d\w-]*/);
+    return className ? className[0] : '';
   }
 
   private static getValue(value: string): string {

@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { Values } from '@values';
+import { Values } from '@utils/values/values';
 
 describe('Return inheritance value or null', () => {
   test('Should return an integer value if the given shortened value passed is true or not null', () => {

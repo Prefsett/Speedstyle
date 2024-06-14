@@ -1,6 +1,6 @@
 import { EnumValues } from '@utils/enumValues/enumValues';
-import { customTextValue } from '@enum/customTextValue';
-import { textValue } from '@enum/textValue';
+import { customTextValue } from '@enum/typography/text/customTextValue';
+import { textValue } from '@enum/typography/text/textValue';
 
 export class TextValues {
   public static getValues(value: string): string | null {
